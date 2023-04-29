@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+/* Simple CSS reset for all elements */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Remove pre - defined margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: white;
+}
+
+/* Make sure images, pictures, svg, or videos are responsive */
+img,
+svg,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background-color: black;
+    min-height: 100vh;
+}
+
+/* Global font styling */
+h1,
+h2 {
+    font-family: Prata;
+    font-size: 2.3em;
+    line-height: 140%;
+    opacity: .9;
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 1.2em;
+    line-height: 150%;
+    opacity: .6;
+    font-weight: 300;
+}
+
+header {
+    padding: 1.5em 1.3em;
+    margin-bottom: 1.9rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav p {
+    font-size: 1.2em;
+    color:  white;
+    font-family: Prata;
+    opacity: .9;
+}
+
+header nav ul { display: none; }
+
+header nav a.nav-button {
+    display: none;
+    padding: .7em 1.5em;
+    font-size: .9em;
+    font-family: Prata;
+    font-weight: 400;
+    color: black;
+    margin-top: .4em;
+    background-color: hsl(51, 85%, 65%);
+    text-decoration: none;
+    border: 1px solid hsl(51, 85%, 65%);
+}
+
+/* Above the fold */
+
+section.value-proposition {
+    padding: 1.5em 1.3em;
+}
+
+section.value-proposition h1 {
+    margin-bottom: .3em;
+}
+
+section.company-logos {
+    display: flex;
+    padding: .5em 1.3em;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1.4em;
+    margin: 3em 0;
+}
+
+section.company-logos div {
+    margin-bottom: 1.8em;
+    flex: 45%;
+}
+
+div.visa svg,
+div.walmart svg,
+div.samsung svg {
+    margin-left: auto;
+}
+
+section.company-logos div.visa {
+    margin-bottom: 1.8em;
+    flex: 45%;
+}
+
+section.company-logos div.verizon {
+    flex: 27%;
+}
+
+/* Article cards section */
+section.cards-container {
+    padding: 1.5em 1.3em;
+    display: flex;
+    flex-direction: column;
+    gap: 3.4em;
+    margin-bottom: 5em;
+}
+
+section.cards-container article figure figcaption h2{
+    padding: .5em 0 .4em 0;
+}
+
+/* Long section */
+article.long-text {
+    padding: 5em 1.3em 2em 1.3em;
+    background-color: rgba(245, 245, 245, 0.190);
+}
+
+article.long-text h2 {
+    margin-bottom: .5em;
+}
+
+article.long-text div.left:nth-child(1) {
+    margin-bottom: 5em;
+}
+
+article.long-text div p {
+    margin-bottom: 1.8em;
+}
+
+/* Get in touch section */
+section.contact-me {
+    padding: 1.5em 1.3em;
+    margin: 4em 0;
+}
+
+section.contact-me p {
+    padding: .5em 0;
+}
+
+section.contact-me button.contact {
+    padding: .7em 1.5em;
+    font-size: 1.2em;
+    font-family: Prata;
+    font-weight: 400;
+    color: black;
+    margin-top: .4em;
+    background-color: hsl(51, 85%, 65%);
+    border: 1px solid hsl(51, 85%, 65%);
+}
+
+/* Footer section */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 2.5em;
+    background-color: rgba(245, 245, 245, 0.190);
+}
+
+footer h3 {
+    font-family: Prata;
+    font-size: 1.1em;
+    opacity: .8;
+}
+
+footer section {
+    display: flex;
+    gap: 1.3em;
+}
+
+/* Interactions */
+
+header nav a.nav-button:hover,
+section.contact-me button.contact:hover {
+    background-color: transparent;
+    color: hsl(51, 85%, 65%);
+    border: 1px solid hsl(51, 85%, 65%);
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media only screen 
+  and (min-width: 768px)
+  and (max-width: 1024px) {
+
+    /* Make images full width */
+    section.cards-container article figure img{ width: 100%; }
+
+    header,
+    section.contact-me,
+    section.cards-container,
+    section.value-proposition,
+    footer { 
+        padding: 1.5em 3em;
+    }
+
+    article.long-text { padding: 4em 3em; }
+
+    h1 { font-size: 3em; }
+    
+    p { font-size: 1.1em; }
+
+    section.contact-me p {
+        width: 75%;
+    }
+
+    section.company-logos {
+        justify-content: space-between;
+    }
+
+    section.company-logos {
+        display: flex;
+        padding: .5em 1.3em;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 1.4em;
+        margin: 3em 0 1em 0;
+    }
+    
+    section.company-logos div,
+    section.company-logos div.visa,
+    section.company-logos div.verizon { flex: 30%; }
+    section.company-logos div svg { margin: auto; }
+
+}
+
+/* Desktop & Laptops */
+@media only screen 
+  and (min-width: 1024px) {
+    
+    /* Make the hamburger icon disappear */
+    header nav svg { display: none; }
+
+    /* Fix navbar */
+    header { padding: 2em 6em; }
+
+    header nav { align-items: baseline; }
+
+    header nav ul {
+        list-style-type: none;
+        display: flex;
+        gap: 3em;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        font-size: .9em;
+        font-family: 'Inter';
+        font-weight: 400;
+        opacity: .6;
+    }
+
+    header nav a.nav-button { display: block; }
+
+    h1 { font-size: 3.5em; }
+    
+    p { font-size: 1.1em; }
+
+    section.cards-container,
+    section.value-proposition,
+    footer { 
+        padding: 1.5em 6em;
+    }
+
+    section.contact-me { padding: 2em 6em; }
+    section.contact-me p { width: 40%; }
+
+    section.value-proposition h1 { width: 60%; }
+    section.value-proposition p { width: 50%; }
+
+    section.company-logos {
+        padding: 1.5em 3em;
+        margin: 1.5em 0;
+    }
+    
+    section.company-logos div,
+    section.company-logos div.visa,
+    section.company-logos div.verizon {
+        flex: auto;
+        margin-bottom: 0;
+    }
+    section.company-logos div svg { margin: auto; }
+
+    section.cards-container {
+        display: flex;
+        flex-direction: row;
+        gap: 3.4em;
+        margin-bottom: 5em;
+    }
+    
+    section.cards-container article figure img{ 
+        width: 100%;
+        height: 400px;
+    }
+
+    article.long-text {
+        display: flex;
+        gap: 5em;
+        padding: 3em 6em;
+    }
+
+    article.long-text div.left { flex: 58%; }
+    article.long-text div.right { flex: 53%; }
+
+    article.long-text div.left:nth-child(1) { margin-bottom: 0; }
+
+  }
